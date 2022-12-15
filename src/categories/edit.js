@@ -31,13 +31,14 @@ export default function Edit({attributes, setAttributes, className}) {
         showEmpty,
         taxonomyCategory,
         showOptionAll,
-        postType
+        postType,
+        currentQuery
     } = attributes;
 
     const {postTypesTaxonomiesMap, postTypesSelectOptions} = usePostTypes();
 
-    let listTaxonomies = useTaxonomiesInfo(postType);
 
+    let listTaxonomies = useTaxonomiesInfo(postType);
 
     const selectId = useInstanceId(Edit, 'blocks-category-select');
 
@@ -185,6 +186,11 @@ export default function Edit({attributes, setAttributes, className}) {
                             onChange={toggleAttribute('showHierarchy')}
                         />
                     )}
+                    <ToggleControl
+                        label={__('Inherit from the current Query')}
+                        checked={currentQuery}
+                        onChange={toggleAttribute('currentQuery')}
+                    />
                     <ToggleControl
                         label={__('Show option All')}
                         checked={showOptionAll}

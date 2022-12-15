@@ -3,7 +3,7 @@
 	"apiVersion": 2,
 	"name": "custom/categories",
 	"title": "Catégories Extended",
-	"category": "featured",
+	"category": "media",
 	"description": "Display a list of all categories.",
 	"textdomain": "default",
 	"attributes": {
@@ -38,6 +38,10 @@
 		"postType": {
 			"type": "string",
 			"default": "post"
+		},
+		"currentQuery": {
+			"type": "boolean",
+			"default": false
 		}
 	},
 	"supports": {
